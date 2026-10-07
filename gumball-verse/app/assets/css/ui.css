@@ -81,21 +81,6 @@
     color: var(--color-orange);
 }
 
-.eyebrow--pill {
-    padding: 7px 16px;
-    border: 2px solid var(--color-ink);
-    border-radius: var(--radius-pill);
-    background-color: var(--color-paper);
-    color: var(--color-ink);
-    letter-spacing: 0.1em;
-    box-shadow: 3px 3px 0 var(--color-ink);
-}
-
-.eyebrow--pill::before {
-    content: '★ ';
-    color: var(--color-orange);
-}
-
 .inline-link {
     color: var(--color-blue-deep);
     text-decoration: underline;
