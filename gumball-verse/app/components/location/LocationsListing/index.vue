@@ -1,3 +1,9 @@
+<script setup>
+const { data } = useFetch('https://gumball-api-server.vercel.app/locations', {
+    query: { limit: 6 },
+});
+</script>
+
 <template>
     <section class="section">
         <div class="container">
@@ -11,52 +17,14 @@
 
             <div class="grid grid--locations">
                 <LocationCard
-                    :id="1"
-                    name="Lugar 1"
-                    image="https://placehold.co/640x400/png?text=Lugar+1"
-                    type="Cidade"
-                    parent="Universo Gumball"
-                    description="Um dos cantos mais curiosos do universo Gumball, onde qualquer coisa pode acontecer."
-                />
-                <LocationCard
-                    :id="2"
-                    name="Lugar 2"
-                    image="https://placehold.co/640x400/png?text=Lugar+2"
-                    type="Residência"
-                    parent="Elmore"
-                    description="Um dos cantos mais curiosos do universo Gumball, onde qualquer coisa pode acontecer."
-                />
-                <LocationCard
-                    :id="3"
-                    name="Lugar 3"
-                    image="https://placehold.co/640x400/png?text=Lugar+3"
-                    type="Escola"
-                    parent="Elmore"
-                    description="Um dos cantos mais curiosos do universo Gumball, onde qualquer coisa pode acontecer."
-                />
-                <LocationCard
-                    :id="4"
-                    name="Lugar 4"
-                    image="https://placehold.co/640x400/png?text=Lugar+4"
-                    type="Loja"
-                    parent="Elmore"
-                    description="Um dos cantos mais curiosos do universo Gumball, onde qualquer coisa pode acontecer."
-                />
-                <LocationCard
-                    :id="5"
-                    name="Lugar 5"
-                    image="https://placehold.co/640x400/png?text=Lugar+5"
-                    type="Lazer"
-                    parent="Elmore"
-                    description="Um dos cantos mais curiosos do universo Gumball, onde qualquer coisa pode acontecer."
-                />
-                <LocationCard
-                    :id="6"
-                    name="Lugar 6"
-                    image="https://placehold.co/640x400/png?text=Lugar+6"
-                    type="Outra dimensão"
-                    parent="Universo Gumball"
-                    description="Um dos cantos mais curiosos do universo Gumball, onde qualquer coisa pode acontecer."
+                    v-for="currentLocation in data?.data"
+                    :key="currentLocation.id"
+                    :id="currentLocation.id"
+                    :name="currentLocation.name"
+                    :image="currentLocation.image"
+                    :type="currentLocation.type"
+                    :parent="currentLocation.parent?.name || 'Universo Gumball'"
+                    :description="currentLocation.description"
                 />
             </div>
         </div>
