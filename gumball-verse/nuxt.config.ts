@@ -2,6 +2,10 @@ export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
     devtools: { enabled: true },
     css: ['~/assets/css/main.css'],
+    components: [
+        { path: '~/components/icons', prefix: 'Icons' },
+        { path: '~/components', pathPrefix: false },
+    ],
     app: {
         head: {
             htmlAttrs: { lang: 'pt-BR' },
