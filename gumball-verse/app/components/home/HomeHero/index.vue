@@ -9,10 +9,29 @@ const stats = [
 ];
 
 const heroCharacters = [
-    { name: 'anais', image: `${CHARACTERS_CDN}/anais-watterson.webp` },
-    { name: 'gumball', image: `${CHARACTERS_CDN}/gumball-watterson.webp` },
-    { name: 'darwin', image: `${CHARACTERS_CDN}/darwin-watterson.webp` },
+    {
+        name: 'Gumball',
+        image: `${CHARACTERS_CDN}/gumball-watterson.webp`,
+        color: 'var(--color-blue)',
+    },
+    {
+        name: 'Darwin',
+        image: `${CHARACTERS_CDN}/darwin-watterson.webp`,
+        color: 'var(--color-orange)',
+    },
+    { name: 'Anais', image: `${CHARACTERS_CDN}/anais-watterson.webp`, color: 'var(--color-pink)' },
 ];
+
+const POSITIONS = ['center', 'right', 'left'];
+
+const activeIndex = ref(0);
+
+const activeColor = computed(() => heroCharacters[activeIndex.value].color);
+
+function getPosition(index) {
+    const offset = (index - activeIndex.value + heroCharacters.length) % heroCharacters.length;
+    return POSITIONS[offset];
+}
 </script>
 
 <template>
@@ -43,16 +62,25 @@ const heroCharacters = [
                 </dl>
             </div>
 
-            <div class="hero__art" aria-hidden="true">
-                <div class="hero__blob"></div>
-                <div class="hero__sun"></div>
-                <img
-                    v-for="character in heroCharacters"
+            <div class="hero__art" :style="{ '--hero-color': activeColor }">
+                <div class="hero__blob" aria-hidden="true"></div>
+                <div class="hero__sun" aria-hidden="true"></div>
+                <button
+                    v-for="(character, index) in heroCharacters"
                     :key="character.name"
-                    :src="character.image"
-                    :class="['hero__character', `hero__character--${character.name}`]"
-                    alt=""
-                />
+                    type="button"
+                    class="hero__character"
+                    :class="`hero__character--${getPosition(index)}`"
+                    :aria-label="`Destacar ${character.name}`"
+                    :aria-pressed="index === activeIndex"
+                    @click="activeIndex = index"
+                >
+                    <img
+                        :src="character.image"
+                        :alt="character.name"
+                        :style="{ animationDelay: `${index * -1.5}s` }"
+                    />
+                </button>
             </div>
         </div>
     </section>
@@ -157,10 +185,11 @@ const heroCharacters = [
 .hero__blob {
     position: absolute;
     inset: 8% 4% 4%;
-    background-color: var(--color-blue);
+    background-color: var(--hero-color);
     border: 3px solid var(--color-ink);
     border-radius: 58% 42% 46% 54% / 52% 48% 52% 48%;
     box-shadow: 10px 10px 0 var(--color-ink);
+    transition: background-color 0.5s ease;
     animation: morph 12s ease-in-out infinite;
 }
 
@@ -195,29 +224,43 @@ const heroCharacters = [
 .hero__character {
     position: absolute;
     bottom: 4%;
-    object-fit: contain;
-    filter: drop-shadow(5px 6px 0 rgba(28, 36, 51, 0.9));
+    z-index: 2;
+    padding: 0;
+    border: 0;
+    background: none;
+    transition:
+        left 0.6s var(--ease-bounce),
+        width 0.6s var(--ease-bounce),
+        transform 0.25s ease;
 }
 
-.hero__character--gumball {
-    left: 27%;
-    z-index: 2;
-    width: 46%;
+.hero__character img {
+    width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(5px 6px 0 rgba(28, 36, 51, 0.9));
     animation: bob 4.5s ease-in-out infinite;
 }
 
-.hero__character--darwin {
-    right: 2%;
+.hero__character--center {
+    left: 27%;
     z-index: 3;
-    width: 33%;
-    animation: bob 4.5s ease-in-out -1.5s infinite;
+    width: 46%;
+    cursor: default;
 }
 
-.hero__character--anais {
-    left: 4%;
-    z-index: 3;
-    width: 27%;
-    animation: bob 4.5s ease-in-out -3s infinite;
+.hero__character--left {
+    left: 3%;
+    width: 28%;
+}
+
+.hero__character--right {
+    left: 68%;
+    width: 30%;
+}
+
+.hero__character--left:hover,
+.hero__character--right:hover {
+    transform: translateY(-8px) scale(1.04);
 }
 
 @keyframes bob {
