@@ -12,6 +12,10 @@
     border-block: 2px solid rgba(28, 36, 51, 0.08);
 }
 
+.section--list {
+    padding-top: 40px;
+}
+
 .grid {
     display: grid;
     gap: clamp(18px, 2.4vw, 28px);

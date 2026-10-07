@@ -26,7 +26,10 @@ const props = defineProps({
 
         <div class="character-card__body">
             <h3 class="character-card__title">{{ name }}</h3>
-            <p class="character-card__meta">{{ species }} · {{ occupation }}</p>
+            <p class="character-card__meta">
+                {{ species }}
+                <template v-if="occupation"> · {{ occupation }}</template>
+            </p>
 
             <SeeDetailsButton :to="`/characters/${id}`" />
         </div>

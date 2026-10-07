@@ -9,7 +9,13 @@ const props = defineProps({
         <CharacterCard
             v-for="currentCharacter of characters"
             :key="currentCharacter.id"
-            :character="currentCharacter"
+            :id="currentCharacter.id"
+            :name="currentCharacter.name"
+            :image="currentCharacter.image"
+            :species="currentCharacter.species"
+            :occupation="currentCharacter.occupation"
+            :role="getCharacterRole(currentCharacter.role)"
+            :color="getCharacterColor(currentCharacter.colors)"
         />
     </div>
 </template>
