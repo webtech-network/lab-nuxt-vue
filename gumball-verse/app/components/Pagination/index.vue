@@ -5,6 +5,17 @@ const props = defineProps({
 });
 
 const route = useRoute();
+
+const visiblePages = computed(() => {
+    const candidates = [1, props.page - 1, props.page, props.page + 1, props.totalPages];
+    const pages = [...new Set(candidates)]
+        .filter((pageNumber) => pageNumber >= 1 && pageNumber <= props.totalPages)
+        .sort((first, second) => first - second);
+
+    return pages.flatMap((pageNumber, index) =>
+        index > 0 && pageNumber - pages[index - 1] > 1 ? ['…', pageNumber] : [pageNumber]
+    );
+});
 </script>
 
 <template>
@@ -18,16 +29,19 @@ const route = useRoute();
             <IconsArrowLeft />
         </NuxtLink>
 
-        <NuxtLink
-            v-for="pageNumber in totalPages"
-            :key="pageNumber"
-            :to="{ query: { ...route.query, page: pageNumber } }"
-            class="page-btn"
-            :class="{ 'is-active': pageNumber === page }"
-            :aria-current="pageNumber === page ? 'page' : undefined"
-        >
-            {{ pageNumber }}
-        </NuxtLink>
+        <template v-for="(pageNumber, index) in visiblePages" :key="index">
+            <span v-if="pageNumber === '…'" class="page-gap">…</span>
+
+            <NuxtLink
+                v-else
+                :to="{ query: { ...route.query, page: pageNumber } }"
+                class="page-btn"
+                :class="{ 'is-active': pageNumber === page }"
+                :aria-current="pageNumber === page ? 'page' : undefined"
+            >
+                {{ pageNumber }}
+            </NuxtLink>
+        </template>
 
         <NuxtLink
             v-if="page < totalPages"
@@ -79,6 +93,12 @@ const route = useRoute();
 .page-btn.is-active {
     background-color: var(--color-blue);
     color: #fff;
+}
+
+.page-gap {
+    padding: 0 4px;
+    font-weight: 800;
+    color: var(--color-muted);
 }
 
 @media (max-width: 560px) {
