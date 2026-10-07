@@ -30,29 +30,41 @@ const technologies = ['Nuxt', 'Vue', 'CSS', 'Gumball API', 'GitHub API'];
 
             <ul class="about__features">
                 <FeatureCard
-                    icon="🐱"
                     title="245 personagens"
                     description="Busca por nome, filtro por papel e ficha completa de cada um."
                     color="blue"
-                />
+                >
+                    <template #icon>
+                        <IconsUsers />
+                    </template>
+                </FeatureCard>
                 <FeatureCard
-                    icon="🗺️"
                     title="112 lugares"
                     description="Filtro por tipo e navegação entre lugares e sub-lugares."
                     color="yellow"
-                />
+                >
+                    <template #icon>
+                        <IconsMap />
+                    </template>
+                </FeatureCard>
                 <FeatureCard
-                    icon="📱"
                     title="100% responsivo"
                     description="Do celular ao monitor ultrawide, com animações suaves."
                     color="pink"
-                />
+                >
+                    <template #icon>
+                        <IconsDevices />
+                    </template>
+                </FeatureCard>
                 <FeatureCard
-                    icon="⚡"
                     title="Rápido de verdade"
                     description="Páginas renderizadas no servidor e imagens carregadas sob demanda."
                     color="orange"
-                />
+                >
+                    <template #icon>
+                        <IconsLightning />
+                    </template>
+                </FeatureCard>
             </ul>
         </div>
 

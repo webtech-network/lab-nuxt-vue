@@ -1,6 +1,5 @@
 <script setup>
 const props = defineProps({
-    icon: String,
     title: String,
     description: String,
     color: {
@@ -12,7 +11,9 @@ const props = defineProps({
 
 <template>
     <li class="feature" :style="{ '--feature-color': `var(--color-${color})` }">
-        <span class="feature__icon" aria-hidden="true">{{ icon }}</span>
+        <span class="feature__icon" aria-hidden="true">
+            <slot name="icon" />
+        </span>
         <div>
             <h3 class="feature__title">{{ title }}</h3>
             <p class="feature__description">{{ description }}</p>
@@ -48,7 +49,12 @@ const props = defineProps({
     border: 2px solid var(--color-ink);
     border-radius: var(--radius-sm);
     background-color: var(--feature-color);
-    font-size: 1.4rem;
+    box-shadow: 2px 2px 0 var(--color-ink);
+}
+
+.feature__icon :slotted(svg) {
+    width: 24px;
+    height: 24px;
 }
 
 .feature__title {
