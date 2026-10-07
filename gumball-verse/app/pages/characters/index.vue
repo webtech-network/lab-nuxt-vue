@@ -32,7 +32,7 @@ function handleSearch(value) {
         <PageHero
             eyebrow="Elenco completo"
             title="Todos os personagens"
-            lead="Explore cada morador de Elmore — dos protagonistas às participações de um episódio só."
+            lead="Explore cada morador de Elmore, dos protagonistas às participações de um episódio só."
         />
 
         <section class="section section--list">

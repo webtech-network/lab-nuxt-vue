@@ -23,8 +23,8 @@ const dataSourceLinks = [
                 <div class="footer__brand">
                     <AppLogo light />
                     <p>
-                        Um guia afetuoso pela cidade mais estranha da Califórnia — onde até a
-                        comida, os móveis e o Sol podem ganhar vida.
+                        Um guia afetuoso pela cidade mais estranha da Califórnia, onde até a comida,
+                        os móveis e o Sol podem ganhar vida.
                     </p>
                 </div>
 

@@ -26,8 +26,8 @@ const heroCharacters = [
 
                 <p class="hero__lead">
                     Uma cidade onde bananas falam, nuvens têm sentimentos e um gato azul de 12 anos
-                    transforma qualquer terça-feira num caos épico. Conheça quem vive — e onde vive
-                    — nesse universo.
+                    transforma qualquer terça-feira num caos épico. Conheça quem vive e onde vive
+                    nesse universo.
                 </p>
 
                 <div class="hero__actions">

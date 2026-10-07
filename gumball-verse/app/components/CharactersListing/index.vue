@@ -9,7 +9,7 @@ const props = defineProps({
         <div class="container">
             <SectionHeader
                 eyebrow="Seção 01 · Elenco"
-                lead="Da família Watterson aos colegas da Elmore Junior High — cada um mais imprevisível que o outro."
+                lead="Da família Watterson aos colegas da Elmore Junior High, cada um mais imprevisível que o outro."
                 :see-all-url="limit ? '/characters' : undefined"
             >
                 Os moradores mais <em>esquisitos</em> de Elmore
