@@ -13,11 +13,6 @@ const props = defineProps({
 <template>
     <section class="page-hero" :class="`page-hero--${color}`">
         <div class="container page-hero__content">
-            <NuxtLink to="/" class="page-hero__back">
-                <IconsArrowLeft />
-                Voltar ao início
-            </NuxtLink>
-
             <span class="eyebrow page-hero__eyebrow">{{ eyebrow }}</span>
             <h1 class="page-hero__title">{{ title }}</h1>
             <p class="page-hero__lead">{{ lead }}</p>
@@ -61,21 +56,6 @@ const props = defineProps({
 .page-hero__content {
     position: relative;
     z-index: 1;
-}
-
-.page-hero__back {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    width: fit-content;
-    margin-bottom: 22px;
-    font-size: 0.95rem;
-    font-weight: 800;
-    transition: gap 0.2s ease;
-}
-
-.page-hero__back:hover {
-    gap: 10px;
 }
 
 .page-hero__eyebrow {

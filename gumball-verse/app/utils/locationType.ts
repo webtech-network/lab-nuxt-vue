@@ -11,7 +11,6 @@ export const LOCATION_TYPE_LABELS: Record<string, string> = {
     transport: 'Transporte',
     nature: 'Natureza',
     'other-realm': 'Outra dimensão',
-    other: 'Outro',
 };
 
 export function getLocationType(type: string): string {
