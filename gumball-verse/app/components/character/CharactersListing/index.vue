@@ -1,16 +1,10 @@
-<script setup>
-const props = defineProps({
-    limit: Number,
-});
-</script>
-
 <template>
     <section class="section">
         <div class="container">
             <SectionHeader
                 eyebrow="Seção 01 · Elenco"
                 lead="Da família Watterson aos colegas da Elmore Junior High, cada um mais imprevisível que o outro."
-                :see-all-url="limit ? '/characters' : undefined"
+                see-all-url="/characters"
             >
                 Os moradores mais <em>esquisitos</em> de Elmore
             </SectionHeader>

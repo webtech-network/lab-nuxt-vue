@@ -1,16 +1,10 @@
-<script setup>
-const props = defineProps({
-    limit: Number,
-});
-</script>
-
 <template>
     <section class="section">
         <div class="container">
             <SectionHeader
                 eyebrow="Seção 02 · Mapa"
                 lead="Casas, escolas, lojas e até outras dimensões. Escolha um destino e boa viagem."
-                :see-all-url="limit ? '/locations' : undefined"
+                see-all-url="/locations"
             >
                 Lugares onde <em>tudo</em> pode acontecer
             </SectionHeader>
