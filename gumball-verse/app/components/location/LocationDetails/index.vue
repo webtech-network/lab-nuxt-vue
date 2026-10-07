@@ -8,14 +8,15 @@ const props = defineProps({
     parentName: String,
     firstAppearanceCode: String,
     firstAppearanceTitle: String,
+    color: String,
 });
 </script>
 
 <template>
-    <DetailCard layout="stacked">
+    <DetailCard :style="{ '--detail-color': color }">
         <template #media>
-            <div class="location-details__banner">
-                <img :src="image" :alt="name" width="1280" height="560" />
+            <div class="location-details__visual">
+                <img :src="image" :alt="name" width="640" height="400" />
             </div>
         </template>
 
@@ -25,7 +26,7 @@ const props = defineProps({
             </template>
         </DetailHeading>
 
-        <InfoGrid :columns="3">
+        <InfoGrid>
             <InfoItem label="Tipo">{{ type }}</InfoItem>
             <InfoItem label="Fica em">
                 <NuxtLink v-if="parentId" class="inline-link" :to="`/locations/${parentId}`">
@@ -41,30 +42,51 @@ const props = defineProps({
 </template>
 
 <style scoped>
-.location-details__banner {
-    aspect-ratio: 16 / 7;
-    overflow: hidden;
-    border-bottom: 3px solid var(--color-ink);
-    background-color: color-mix(in srgb, var(--color-blue) 25%, white);
+.location-details__visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+    padding: 40px 32px;
+    border-right: 3px solid var(--color-ink);
+    background:
+        radial-gradient(rgba(28, 36, 51, 0.1) 1.6px, transparent 1.8px) 0 0 / 20px 20px,
+        linear-gradient(
+            160deg,
+            color-mix(in srgb, var(--detail-color) 30%, white),
+            color-mix(in srgb, var(--detail-color) 65%, white)
+        );
 }
 
-.location-details__banner img {
+.location-details__visual img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 16 / 10;
     object-fit: cover;
-    animation: zoom-out 1.2s ease both;
+    border: 3px solid var(--color-ink);
+    border-radius: var(--radius-md);
+    background-color: var(--color-paper);
+    box-shadow: var(--shadow-md);
+    animation: pop-in 0.7s var(--ease-bounce) both;
 }
 
-@keyframes zoom-out {
+@keyframes pop-in {
     from {
-        opacity: 0.4;
-        transform: scale(1.08);
+        opacity: 0;
+        transform: translateY(30px) scale(0.94);
     }
 }
 
-@media (max-width: 680px) {
-    .location-details__banner {
-        aspect-ratio: 16 / 10;
+@media (max-width: 900px) {
+    .location-details__visual {
+        min-height: 0;
+        border-right: 0;
+        border-bottom: 3px solid var(--color-ink);
+    }
+}
+
+@media (max-width: 560px) {
+    .location-details__visual {
+        padding: 24px 16px;
     }
 }
 </style>

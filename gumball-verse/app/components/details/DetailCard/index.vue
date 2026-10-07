@@ -1,14 +1,5 @@
-<script setup>
-const props = defineProps({
-    layout: {
-        type: String,
-        default: 'split',
-    },
-});
-</script>
-
 <template>
-    <article class="detail" :class="`detail--${layout}`">
+    <article class="detail">
         <slot name="media" />
 
         <div class="detail__content">
@@ -20,19 +11,12 @@ const props = defineProps({
 <style scoped>
 .detail {
     display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     overflow: hidden;
     background-color: var(--color-paper);
     border: 3px solid var(--color-ink);
     border-radius: var(--radius-lg);
     box-shadow: 10px 10px 0 var(--color-ink);
-}
-
-.detail--split {
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-}
-
-.detail--stacked {
-    grid-template-columns: 1fr;
 }
 
 .detail__content {
@@ -43,10 +27,6 @@ const props = defineProps({
     animation: fade-up 0.6s ease 0.1s both;
 }
 
-.detail--stacked .detail__content {
-    max-width: 920px;
-}
-
 @keyframes fade-up {
     from {
         opacity: 0;
@@ -55,11 +35,8 @@ const props = defineProps({
 }
 
 @media (max-width: 900px) {
-    .detail--split {
-        grid-template-columns: 1fr;
-    }
-
     .detail {
+        grid-template-columns: 1fr;
         box-shadow: 7px 7px 0 var(--color-ink);
     }
 }
