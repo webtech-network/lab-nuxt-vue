@@ -16,6 +16,10 @@
     padding-top: 40px;
 }
 
+.section--details {
+    padding-top: clamp(28px, 5vw, 56px);
+}
+
 .grid {
     display: grid;
     gap: clamp(18px, 2.4vw, 28px);
