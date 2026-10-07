@@ -57,13 +57,13 @@ function handleSearch(value) {
                     </FilterChip>
                 </FilterChips>
 
-                <p v-if="error" class="list-message">
+                <StateMessage v-if="error">
                     Não foi possível carregar os lugares. Tente novamente mais tarde.
-                </p>
+                </StateMessage>
 
-                <p v-else-if="!data?.data.length" class="list-message">
+                <StateMessage v-else-if="!data?.data.length">
                     Nenhum lugar encontrado. Tente outro termo de busca ou remova os filtros.
-                </p>
+                </StateMessage>
 
                 <LocationsGrid v-else :locations="data.data" />
 
@@ -76,14 +76,3 @@ function handleSearch(value) {
         </section>
     </div>
 </template>
-
-<style scoped>
-.list-message {
-    padding: 56px 24px;
-    text-align: center;
-    color: var(--color-ink-soft);
-    background-color: var(--color-paper);
-    border: 2.5px dashed rgba(28, 36, 51, 0.3);
-    border-radius: var(--radius-md);
-}
-</style>

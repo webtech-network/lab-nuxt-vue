@@ -25,7 +25,8 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
-.grid--locations {
+.grid--locations,
+.grid--repositories {
     grid-template-columns: repeat(3, 1fr);
 }
 
@@ -36,7 +37,8 @@
 }
 
 @media (max-width: 900px) {
-    .grid--locations {
+    .grid--locations,
+    .grid--repositories {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -49,7 +51,8 @@
 }
 
 @media (max-width: 560px) {
-    .grid--locations {
+    .grid--locations,
+    .grid--repositories {
         grid-template-columns: 1fr;
     }
 }
