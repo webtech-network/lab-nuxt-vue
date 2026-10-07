@@ -9,7 +9,12 @@ const props = defineProps({
         <LocationCard
             v-for="currentLocation of locations"
             :key="currentLocation.id"
-            :location="currentLocation"
+            :id="currentLocation.id"
+            :name="currentLocation.name"
+            :image="currentLocation.image"
+            :type="getLocationType(currentLocation.type)"
+            :parent="currentLocation.parent?.name ?? 'Universo Gumball'"
+            :description="currentLocation.description"
         />
     </div>
 </template>

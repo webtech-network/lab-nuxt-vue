@@ -1,4 +1,4 @@
-const TYPE_LABELS: Record<string, string> = {
+export const LOCATION_TYPE_LABELS: Record<string, string> = {
     town: 'Cidade',
     residence: 'Residência',
     school: 'Escola',
@@ -15,5 +15,5 @@ const TYPE_LABELS: Record<string, string> = {
 };
 
 export function getLocationType(type: string): string {
-    return TYPE_LABELS[type] ?? 'Outro';
+    return LOCATION_TYPE_LABELS[type] ?? 'Outro';
 }
