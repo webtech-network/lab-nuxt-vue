@@ -1,0 +1,108 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    padding: 0.85em 1.6em;
+    border: var(--border);
+    border-radius: var(--radius-pill);
+    font-family: var(--font-display);
+    font-size: 1.02rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform 0.2s var(--ease-bounce),
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--color-ink);
+}
+
+.btn svg {
+    transition: transform 0.25s var(--ease-bounce);
+}
+
+.btn:hover svg {
+    transform: translateX(3px);
+}
+
+.btn--primary {
+    background-color: var(--color-orange);
+    color: #fff;
+}
+
+.btn--light,
+.btn--ghost {
+    background-color: var(--color-paper);
+}
+
+.btn--ghost:hover {
+    background-color: var(--color-yellow);
+}
+
+.btn--dark {
+    background-color: var(--color-ink);
+    color: #fff;
+    box-shadow: 4px 4px 0 var(--color-blue);
+}
+
+.btn--dark:hover {
+    box-shadow: 6px 6px 0 var(--color-blue);
+}
+
+.btn--small {
+    padding: 0.55em 1.1em;
+    font-size: 0.92rem;
+    box-shadow: 3px 3px 0 var(--color-ink);
+}
+
+.btn--small:hover {
+    box-shadow: 5px 5px 0 var(--color-ink);
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 14px;
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+}
+
+.eyebrow--pill {
+    padding: 7px 16px;
+    border: 2px solid var(--color-ink);
+    border-radius: var(--radius-pill);
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    letter-spacing: 0.1em;
+    box-shadow: 3px 3px 0 var(--color-ink);
+}
+
+.eyebrow--pill::before {
+    content: '★ ';
+    color: var(--color-orange);
+}
+
+.inline-link {
+    color: var(--color-blue-deep);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.inline-link:hover {
+    color: var(--color-orange);
+}

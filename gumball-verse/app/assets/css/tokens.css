@@ -1,0 +1,48 @@
+:root {
+    --color-cream: #fff6e9;
+    --color-cream-strong: #ffeed6;
+    --color-paper: #ffffff;
+    --color-ink: #1c2433;
+    --color-ink-soft: #4a5468;
+    --color-muted: #7a8398;
+
+    --color-blue: #3db8e0;
+    --color-blue-deep: #1f8fbf;
+    --color-orange: #ff7a1a;
+    --color-pink: #f7a8b8;
+    --color-yellow: #ffd23f;
+    --color-green: #46bd3f;
+
+    --font-display: 'Fredoka', 'Nunito', system-ui, sans-serif;
+    --font-body: 'Nunito', system-ui, -apple-system, sans-serif;
+
+    --radius-sm: 14px;
+    --radius-md: 22px;
+    --radius-lg: 32px;
+    --radius-pill: 999px;
+
+    --border-width: 2.5px;
+    --border: var(--border-width) solid var(--color-ink);
+
+    --shadow-sm: 4px 4px 0 var(--color-ink);
+    --shadow-md: 6px 6px 0 var(--color-ink);
+    --shadow-soft: 0 18px 40px -18px rgba(28, 36, 51, 0.35);
+
+    --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --container-max: 1200px;
+    --container-gutter: 40px;
+    --header-height: 76px;
+}
+
+@media (max-width: 900px) {
+    :root {
+        --header-height: 68px;
+    }
+}
+
+@media (max-width: 560px) {
+    :root {
+        --container-gutter: 32px;
+    }
+}
