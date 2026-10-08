@@ -8,12 +8,11 @@ const props = defineProps({
     parentName: String,
     firstAppearanceCode: String,
     firstAppearanceTitle: String,
-    color: String,
 });
 </script>
 
 <template>
-    <DetailCard :style="{ '--detail-color': color }">
+    <DetailCard>
         <template #media>
             <div class="location-details__visual">
                 <img :src="image" :alt="name" width="640" height="400" />
@@ -53,8 +52,8 @@ const props = defineProps({
         radial-gradient(rgba(28, 36, 51, 0.1) 1.6px, transparent 1.8px) 0 0 / 20px 20px,
         linear-gradient(
             160deg,
-            color-mix(in srgb, var(--detail-color) 30%, white),
-            color-mix(in srgb, var(--detail-color) 65%, white)
+            color-mix(in srgb, var(--color-yellow) 30%, white),
+            color-mix(in srgb, var(--color-yellow) 65%, white)
         );
 }
 

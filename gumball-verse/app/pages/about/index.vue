@@ -3,7 +3,6 @@ const GITHUB_USERNAME = 'arturbomtempo-dev';
 
 useHead({
     title: 'Sobre | Gumball Verse',
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 });
 </script>
 

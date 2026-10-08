@@ -16,6 +16,21 @@ const { data, error } = await useFetch('https://gumball-api-server.vercel.app/lo
 
 const totalItems = computed(() => data.value?.meta.totalItems ?? 0);
 
+const types = [
+    { value: 'town', label: 'Cidade' },
+    { value: 'residence', label: 'Residência' },
+    { value: 'school', label: 'Escola' },
+    { value: 'school-facility', label: 'Espaço escolar' },
+    { value: 'shop', label: 'Loja' },
+    { value: 'restaurant', label: 'Restaurante' },
+    { value: 'business', label: 'Comércio' },
+    { value: 'public-service', label: 'Serviço público' },
+    { value: 'leisure', label: 'Lazer' },
+    { value: 'transport', label: 'Transporte' },
+    { value: 'nature', label: 'Natureza' },
+    { value: 'other-realm', label: 'Outra dimensão' },
+];
+
 let searchTimeout;
 
 function handleSearch(value) {
@@ -28,7 +43,6 @@ function handleSearch(value) {
 
 useHead({
     title: 'Lugares | Gumball Verse',
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 });
 </script>
 
@@ -53,12 +67,12 @@ useHead({
                 <FilterChips>
                     <FilterChip :to="{ query: { search } }" :active="!type">Todos</FilterChip>
                     <FilterChip
-                        v-for="(label, value) in LOCATION_TYPE_LABELS"
-                        :key="value"
-                        :to="{ query: { search, type: value } }"
-                        :active="type === value"
+                        v-for="currentType in types"
+                        :key="currentType.value"
+                        :to="{ query: { search, type: currentType.value } }"
+                        :active="type === currentType.value"
                     >
-                        {{ label }}
+                        {{ currentType.label }}
                     </FilterChip>
                 </FilterChips>
 

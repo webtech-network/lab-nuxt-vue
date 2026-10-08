@@ -1,5 +1,5 @@
 <script setup>
-const { data } = await useFetch('https://gumball-api-server.vercel.app/characters', {
+const { data, error } = await useFetch('https://gumball-api-server.vercel.app/characters', {
     query: { limit: 8 },
 });
 </script>
@@ -15,7 +15,11 @@ const { data } = await useFetch('https://gumball-api-server.vercel.app/character
                 Os moradores mais <em>esquisitos</em> de Elmore
             </SectionHeader>
 
-            <div class="grid grid--characters">
+            <StateMessage v-if="error">
+                Não foi possível carregar os personagens. Tente novamente mais tarde.
+            </StateMessage>
+
+            <div v-else class="grid grid--characters">
                 <CharacterCard
                     v-for="currentCharacter in data?.data"
                     :key="currentCharacter.id"
@@ -25,7 +29,7 @@ const { data } = await useFetch('https://gumball-api-server.vercel.app/character
                     :species="currentCharacter.species"
                     :occupation="currentCharacter.occupation"
                     :role="currentCharacter.role"
-                    :color="currentCharacter.colors?.[0]"
+                    :color="getCharacterColor(currentCharacter.colors)"
                 />
             </div>
         </div>

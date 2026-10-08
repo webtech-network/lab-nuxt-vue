@@ -14,7 +14,7 @@ if (error.value || !data.value) {
 
 useHead({
     title: `${data.value.name} | Gumball Verse`,
-    link: [{ rel: 'icon', type: 'image/webp', href: data.value.image }],
+    link: [{ key: 'favicon', rel: 'icon', type: 'image/webp', href: data.value.image }],
 });
 </script>
 
@@ -35,10 +35,16 @@ useHead({
                           ? 'Secundário'
                           : 'Coadjuvante'
                 "
-                :status="data.status === 'alive' ? 'Vivo' : 'Morto'"
+                :status="
+                    data.status === 'alive'
+                        ? 'Vivo'
+                        : data.status === 'deceased'
+                          ? 'Morto'
+                          : 'Morto-vivo'
+                "
                 :species="data.species"
                 :gender="data.gender"
-                :age="`${data.age} anos`"
+                :age="data.age ? `${data.age} anos` : 'Desconhecida'"
                 :occupation="data.occupation"
                 :animation-style="data.animationStyle"
                 :first-appearance-code="data.firstAppearance?.code"
@@ -46,7 +52,7 @@ useHead({
                 :aliases="data.aliases"
                 :voice-actors="data.voiceActors"
                 :colors="data.colors"
-                :color="data.colors?.[0]"
+                :color="getCharacterColor(data.colors)"
             />
         </div>
     </section>

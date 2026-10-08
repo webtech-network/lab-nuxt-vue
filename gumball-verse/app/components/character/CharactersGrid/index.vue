@@ -14,7 +14,7 @@ const props = defineProps({
             :image="currentCharacter.image"
             :species="currentCharacter.species"
             :occupation="currentCharacter.occupation"
-            :role="getCharacterRole(currentCharacter.role)"
+            :role="currentCharacter.role"
             :color="getCharacterColor(currentCharacter.colors)"
         />
     </div>

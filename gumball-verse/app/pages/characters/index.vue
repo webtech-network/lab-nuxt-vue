@@ -28,7 +28,6 @@ function handleSearch(value) {
 
 useHead({
     title: 'Personagens | Gumball Verse',
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 });
 </script>
 

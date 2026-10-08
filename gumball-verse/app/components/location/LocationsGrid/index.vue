@@ -12,7 +12,7 @@ const props = defineProps({
             :id="currentLocation.id"
             :name="currentLocation.name"
             :image="currentLocation.image"
-            :type="getLocationType(currentLocation.type)"
+            :type="currentLocation.type"
             :parent="currentLocation.parent?.name ?? 'Universo Gumball'"
             :description="currentLocation.description"
         />

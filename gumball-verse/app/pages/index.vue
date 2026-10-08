@@ -1,7 +1,6 @@
 <script setup>
 useHead({
     title: 'Gumball Verse',
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 });
 </script>
 

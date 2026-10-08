@@ -14,8 +14,8 @@ if (error.value || !data.value) {
 
 useHead({
     title: `${data.value.name} | Gumball Verse`,
-    link: [{ rel: 'icon', type: 'image/webp', href: data.value.image }],
-});pages
+    link: [{ key: 'favicon', rel: 'icon', type: 'image/webp', href: data.value.image }],
+});
 </script>
 
 <template>
@@ -32,7 +32,6 @@ useHead({
                 :parent-name="data.parent?.name"
                 :first-appearance-code="data.firstAppearance?.code"
                 :first-appearance-title="data.firstAppearance?.title"
-                color="#ffd23f"
             />
         </div>
     </section>

@@ -1,5 +1,5 @@
 <script setup>
-const { data } = useFetch('https://gumball-api-server.vercel.app/locations', {
+const { data, error } = await useFetch('https://gumball-api-server.vercel.app/locations', {
     query: { limit: 6 },
 });
 </script>
@@ -15,7 +15,11 @@ const { data } = useFetch('https://gumball-api-server.vercel.app/locations', {
                 Lugares onde <em>tudo</em> pode acontecer
             </SectionHeader>
 
-            <div class="grid grid--locations">
+            <StateMessage v-if="error">
+                Não foi possível carregar os lugares. Tente novamente mais tarde.
+            </StateMessage>
+
+            <div v-else class="grid grid--locations">
                 <LocationCard
                     v-for="currentLocation in data?.data"
                     :key="currentLocation.id"
