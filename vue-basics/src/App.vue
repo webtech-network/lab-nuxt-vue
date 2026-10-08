@@ -1,13 +1,8 @@
 <script setup>
-const title = 'Olá, Elmore!';
+const name = 'Gumball';
+const age = 12;
 </script>
 
 <template>
-    <h1 class="title">{{ title }}</h1>
+    <p>{{ name }} tem {{ age }} anos.</p>
 </template>
-
-<style scoped>
-.title {
-    color: #3db8e0;
-}
-</style>
