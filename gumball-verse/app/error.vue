@@ -3,7 +3,7 @@ const props = defineProps({
     error: Object,
 });
 
-const statusCode = computed(() => props.error?.statusCode || 500);
+const statusCode = computed(() => props.error?.status || 500);
 const isNotFound = computed(() => statusCode.value === 404);
 const digits = computed(() => String(statusCode.value).split(''));
 

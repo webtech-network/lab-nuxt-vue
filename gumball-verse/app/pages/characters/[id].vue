@@ -3,7 +3,14 @@ const route = useRoute();
 
 const { id } = route.params;
 
-const { data } = await useFetch(`https://gumball-api-server.vercel.app/characters/${id}`);
+const { data, error } = await useFetch(`https://gumball-api-server.vercel.app/characters/${id}`);
+
+if (error.value || !data.value) {
+    throw createError({
+        status: error.value?.status === 404 ? 404 : 503,
+        fatal: true,
+    });
+}
 </script>
 
 <template>
