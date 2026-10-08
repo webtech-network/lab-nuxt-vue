@@ -8,7 +8,6 @@ export default defineNuxtConfig({
     ],
     app: {
         head: {
-            title: 'Gumball Verse',
             htmlAttrs: { lang: 'pt-BR' },
             meta: [
                 { name: 'theme-color', content: '#fff6e9' },
@@ -18,9 +17,6 @@ export default defineNuxtConfig({
                 },
             ],
             link: [
-                { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
-                { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32.png' },
-                { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/favicon-192.png' },
                 { rel: 'apple-touch-icon', href: '/favicon-192.png' },
                 { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
                 { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
