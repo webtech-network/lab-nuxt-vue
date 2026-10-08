@@ -1,4 +1,6 @@
 <script setup>
+import { ref } from 'vue';
+
 const isActive = ref(true);
 const color = '#ff7a1a';
 </script>
