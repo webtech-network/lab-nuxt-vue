@@ -1,6 +1,9 @@
 <script setup>
 const route = useRoute();
+
 const { id } = route.params;
+
+const { data } = await useFetch(`https://gumball-api-server.vercel.app/locations/${id}`);
 </script>
 
 <template>
@@ -9,14 +12,14 @@ const { id } = route.params;
             <BackLink to="/locations">Todos os lugares</BackLink>
 
             <LocationDetails
-                name="Nome do lugar"
-                image="https://placehold.co/640x400/png?text=Lugar"
-                description="Uma breve descrição do lugar, contando o que acontece por lá e qual é a sua importância no universo de O Incrível Mundo de Gumball."
-                type="Escola"
-                :parent-id="1"
-                parent-name="Elmore"
-                first-appearance-code="S01E02"
-                first-appearance-title="Nome do episódio"
+                :name="data.name"
+                :image="data.image"
+                :description="data.description"
+                :type="data.type"
+                :parent-id="data.parent?.id"
+                :parent-name="data.parent?.name"
+                :first-appearance-code="data.firstAppearance?.code"
+                :first-appearance-title="data.firstAppearance?.title"
                 color="#ffd23f"
             />
         </div>
