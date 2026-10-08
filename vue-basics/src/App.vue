@@ -1,11 +1,13 @@
-<script setup lang="ts"></script>
+<script setup>
+const title = 'Olá, Elmore!';
+</script>
 
 <template>
-    <h1>You did it!</h1>
-    <p>
-        Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-        documentation
-    </p>
+    <h1 class="title">{{ title }}</h1>
 </template>
 
-<style scoped></style>
+<style scoped>
+.title {
+    color: #3db8e0;
+}
+</style>
