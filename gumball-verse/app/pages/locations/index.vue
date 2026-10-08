@@ -25,6 +25,11 @@ function handleSearch(value) {
         router.replace({ query: { type: type.value, search: value || undefined } });
     }, 400);
 }
+
+useHead({
+    title: 'Lugares | Gumball Verse',
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+});
 </script>
 
 <template>

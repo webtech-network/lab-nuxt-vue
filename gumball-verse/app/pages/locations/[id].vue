@@ -11,6 +11,11 @@ if (error.value || !data.value) {
         fatal: true,
     });
 }
+
+useHead({
+    title: `${data.value.name} | Gumball Verse`,
+    link: [{ rel: 'icon', type: 'image/webp', href: data.value.image }],
+});pages
 </script>
 
 <template>

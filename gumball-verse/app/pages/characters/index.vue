@@ -25,6 +25,11 @@ function handleSearch(value) {
         router.replace({ query: { role: role.value, search: value || undefined } });
     }, 400);
 }
+
+useHead({
+    title: 'Personagens | Gumball Verse',
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+});
 </script>
 
 <template>
