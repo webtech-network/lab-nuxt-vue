@@ -38,6 +38,7 @@
 ## 📚 Índice
 
 - [Status do Projeto](#-status-do-projeto)
+- [Materiais do Workshop](#-materiais-do-workshop)
 - [Links Úteis](#-links-úteis)
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Funcionalidades Principais](#-funcionalidades-principais)
@@ -58,6 +59,22 @@
 - [Autor](#-autor)
 - [Contribuição](#-contribuição)
 - [Licença](#-licença)
+
+---
+
+## 🎓 Materiais do Workshop
+
+Os materiais abaixo acompanham o workshop e complementam o código deste repositório.
+
+<p align="left">
+  <a href="https://app.notion.com/p/Workshop-de-Vue-js-e-Nuxt-js-b9936c7b4a0d44e598cb15c0f7c62b48"><img src="https://img.shields.io/badge/Material_complementar-Notion-000000?style=for-the-badge&logo=notion&logoColor=white" alt="Material complementar no Notion"></a>
+  <a href="https://drive.google.com/drive/u/0/folders/1JJddR_LQPA3B5hw_kr4rhRWjMT_6XoQw"><img src="https://img.shields.io/badge/Base_do_projeto-Google_Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white" alt="Base do projeto no Google Drive"></a>
+</p>
+
+| Material | Descrição |
+| :--- | :--- |
+| [**Material complementar (Notion)**](https://app.notion.com/p/Workshop-de-Vue-js-e-Nuxt-js-b9936c7b4a0d44e598cb15c0f7c62b48) | Conteúdo teórico do workshop, com a explicação dos conceitos de Vue e Nuxt, exemplos e referências para estudar depois do encontro. |
+| [**Base do projeto (Google Drive)**](https://drive.google.com/drive/u/0/folders/1JJddR_LQPA3B5hw_kr4rhRWjMT_6XoQw) | Projeto inicial que os participantes recebem para acompanhar a parte prática, com o layout pronto e os dados estáticos que serão integrados à API durante o workshop. |
 
 ---
 
@@ -167,6 +184,8 @@ Guardar o estado da busca, do filtro e da página na URL permite que o botão vo
 - **Editor recomendado:** VS Code com as extensões [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) e [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
 O projeto não precisa de banco de dados nem de variáveis de ambiente.
+
+Para acompanhar a parte prática do workshop, baixe a [base do projeto no Google Drive](https://drive.google.com/drive/u/0/folders/1JJddR_LQPA3B5hw_kr4rhRWjMT_6XoQw), que já vem com o layout pronto e os dados estáticos. Este repositório contém a versão final, com a integração à API concluída, e pode ser usado como gabarito.
 
 ### 📦 Clonando o repositório
 

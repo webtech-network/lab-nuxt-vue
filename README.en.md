@@ -38,6 +38,7 @@
 ## 📚 Table of Contents
 
 - [Project Status](#-project-status)
+- [Workshop Materials](#-workshop-materials)
 - [Useful Links](#-useful-links)
 - [About the Project](#-about-the-project)
 - [Main Features](#-main-features)
@@ -58,6 +59,22 @@
 - [Author](#-author)
 - [Contributing](#-contributing)
 - [License](#-license)
+
+---
+
+## 🎓 Workshop Materials
+
+The materials below accompany the workshop and complement the code in this repository.
+
+<p align="left">
+  <a href="https://app.notion.com/p/Workshop-de-Vue-js-e-Nuxt-js-b9936c7b4a0d44e598cb15c0f7c62b48"><img src="https://img.shields.io/badge/Supplementary_material-Notion-000000?style=for-the-badge&logo=notion&logoColor=white" alt="Supplementary material on Notion"></a>
+  <a href="https://drive.google.com/drive/u/0/folders/1JJddR_LQPA3B5hw_kr4rhRWjMT_6XoQw"><img src="https://img.shields.io/badge/Starter_project-Google_Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white" alt="Starter project on Google Drive"></a>
+</p>
+
+| Material | Description |
+| :--- | :--- |
+| [**Supplementary material (Notion)**](https://app.notion.com/p/Workshop-de-Vue-js-e-Nuxt-js-b9936c7b4a0d44e598cb15c0f7c62b48) | Theoretical content of the workshop, explaining Vue and Nuxt concepts with examples and references for further study after the session. |
+| [**Starter project (Google Drive)**](https://drive.google.com/drive/u/0/folders/1JJddR_LQPA3B5hw_kr4rhRWjMT_6XoQw) | The initial project participants receive to follow the hands-on part, with the layout ready and static data that will be integrated with the API during the workshop. |
 
 ---
 
@@ -167,6 +184,8 @@ Keeping the search, filter and page state in the URL makes the browser back butt
 - **Recommended editor:** VS Code with the [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) extensions
 
 The project does not need a database or environment variables.
+
+To follow the hands-on part of the workshop, download the [starter project from Google Drive](https://drive.google.com/drive/u/0/folders/1JJddR_LQPA3B5hw_kr4rhRWjMT_6XoQw), which comes with the layout ready and static data. This repository contains the final version, with the API integration completed, and can be used as an answer key.
 
 ### 📦 Cloning the repository
 
